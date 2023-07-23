@@ -130,11 +130,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="Engine\Engine.cpp" />
+    <ClCompile Include="Engine\Services\Graphics\SDLWindow.cpp" />
+    <ClCompile Include="Engine\Services\Input\SDLInput.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Engine.h" />
+    <ClInclude Include="Engine\Engine.h" />
+    <ClInclude Include="Engine\Debug.h" />
+    <ClInclude Include="Engine\Services\Graphics\SDLWindow.h" />
+    <ClInclude Include="Engine\Services\Graphics.h" />
+    <ClInclude Include="Engine\Services\Input.h" />
+    <ClInclude Include="Engine\Services\Input\SDLInput.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
