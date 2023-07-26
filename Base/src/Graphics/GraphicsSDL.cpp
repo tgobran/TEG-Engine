@@ -37,7 +37,7 @@ void GraphicsSDL::initialize(const char* name, int xpos, int ypos, int width, in
 void GraphicsSDL::update() {
 	GRAPHICS_DEBUG("Update Started")
 	SDL_RenderClear(renderer);
-	renderTexture(loadTexture("assets/Back.bmp"),0.5,0.5,0.2,0.2);
+	renderTexture(loadTexture("assets/Back.bmp"),0.5,0.5,0.2,0.2,true);
 	SDL_RenderPresent(renderer);
 	GRAPHICS_DEBUG("Update Complete")
 }
@@ -72,7 +72,9 @@ int GraphicsSDL::loadTexture(std::string path) {
 	return nextID++;
 }
 
-void GraphicsSDL::renderTexture(unsigned int id, float x, float y, float w, float h) {
+void GraphicsSDL::renderTexture(unsigned int id, float x, float y, float w, float h, bool centered) {
+	GRAPHICS_DEBUG("Rendering Texture - " << id)
+	
 	SDL_Rect dstrect;
 	if (x != floor(x) && x < 1)
 		dstrect.x = WINDOW_WIDTH * x;
@@ -90,12 +92,18 @@ void GraphicsSDL::renderTexture(unsigned int id, float x, float y, float w, floa
 		dstrect.h = WINDOW_HEIGHT * h;
 	else
 		dstrect.h = h;
+	
+	if (centered) {
+		dstrect.x = dstrect.x - (dstrect.w / 2);
+		dstrect.y = dstrect.y - (dstrect.h / 2);
+	}
+	
 	renderSDLTexture(getSDLTexture(id), nullptr, &dstrect);
 }
 
 void GraphicsSDL::renderTextureFill(unsigned int id) {
 	GRAPHICS_DEBUG("Rendering Fill Texture - " << id)
-		renderSDLTexture(getSDLTexture(id), nullptr, nullptr);
+	renderSDLTexture(getSDLTexture(id), nullptr, nullptr);
 }
 
 SDL_Texture* GraphicsSDL::getSDLTexture(unsigned int id) {

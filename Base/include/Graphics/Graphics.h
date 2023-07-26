@@ -17,6 +17,6 @@ public:
 
 	virtual int loadTexture(std::string path) = 0;
 
-	virtual void renderTexture(unsigned int id, float x, float y, float w, float h) = 0;
+	virtual void renderTexture(unsigned int id, float x, float y, float w, float h, bool centered=false) = 0;
 	virtual void renderTextureFill(unsigned int id) = 0;
 };

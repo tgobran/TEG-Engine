@@ -18,7 +18,7 @@ public:
 
 	int loadTexture(std::string path);
 
-	void renderTexture(unsigned int id, float x, float y, float w, float h);
+	void renderTexture(unsigned int id, float x, float y, float w, float h, bool centered=false);
 	void renderTextureFill(unsigned int id);
 	
 private:
