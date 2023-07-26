@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Graphics/Window.h"
+#include "Graphics/Graphics.h"
 #include "Input/Input.h"
 
 //Screen dimension constants
