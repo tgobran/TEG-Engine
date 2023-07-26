@@ -18,34 +18,207 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\Engine.cpp">
+    <ClCompile Include="src\Engine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\Services\Graphics\SDLWindow.cpp">
+    <ClCompile Include="src\Graphics\WindowSDL.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\Services\Input\SDLInput.cpp">
+    <ClCompile Include="src\Input\InputSDL.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Engine\Engine.h">
+    <ClInclude Include="include\Engine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\Services\Graphics.h">
+    <ClInclude Include="include\Graphics\Window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\Services\Graphics\SDLWindow.h">
+    <ClInclude Include="include\Graphics\WindowSDL.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\Services\Input.h">
+    <ClInclude Include="include\Input\Input.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\Services\Input\SDLInput.h">
+    <ClInclude Include="include\Input\InputSDL.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\Debug.h">
+    <ClInclude Include="include\Debug.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\Error.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\Texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\Card-Back.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Back.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Hearts\Hearts-Ace.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Hearts\Hearts-Eight.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Hearts\Hearts-Five.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Hearts\Hearts-Four.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Hearts\Hearts-Jack.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Hearts\Hearts-King.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Hearts\Hearts-Nine.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Hearts\Hearts-Queen.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Hearts\Hearts-Seven.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Hearts\Hearts-Six.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Hearts\Hearts-Ten.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Hearts\Hearts-Three.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Hearts\Hearts-Two.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Diamonds\Diamonds-Ace.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Diamonds\Diamonds-Eight.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Diamonds\Diamonds-Five.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Diamonds\Diamonds-Four.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Diamonds\Diamonds-Jack.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Diamonds\Diamonds-King.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Diamonds\Diamonds-Nine.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Diamonds\Diamonds-Queen.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Diamonds\Diamonds-Seven.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Diamonds\Diamonds-Six.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Diamonds\Diamonds-Ten.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Diamonds\Diamonds-Three.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Diamonds\Diamonds-Two.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Clubs\Clubs-Ace.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Clubs\Clubs-Eight.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Clubs\Clubs-Five.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Clubs\Clubs-Four.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Clubs\Clubs-Jack.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Clubs\Clubs-King.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Clubs\Clubs-Nine.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Clubs\Clubs-Queen.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Clubs\Clubs-Seven.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Clubs\Clubs-Six.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Clubs\Clubs-Ten.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Clubs\Clubs-Three.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Clubs\Clubs-Two.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Spades\Hearts-Ace.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Spades\Hearts-Eight.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Spades\Hearts-Five.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Spades\Hearts-Four.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Spades\Hearts-Jack.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Spades\Hearts-King.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Spades\Hearts-Nine.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Spades\Hearts-Queen.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Spades\Hearts-Seven.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Spades\Hearts-Six.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Spades\Hearts-Ten.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Spades\Hearts-Three.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Spades\Hearts-Two.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="src\Graphics\Back.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

@@ -104,13 +104,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\Development\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Development\SDL2 Image\include;D:\Development\TApp\Base\include;D:\Development\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>D:\Development\SDL2\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\Development\SDL2\lib\x64;D:\Development\SDL2 Image\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -130,18 +130,77 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Engine\Engine.cpp" />
-    <ClCompile Include="Engine\Services\Graphics\SDLWindow.cpp" />
-    <ClCompile Include="Engine\Services\Input\SDLInput.cpp" />
+    <ClCompile Include="src\Engine.cpp" />
+    <ClCompile Include="src\Graphics\WindowSDL.cpp" />
+    <ClCompile Include="src\Input\InputSDL.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Engine\Engine.h" />
-    <ClInclude Include="Engine\Debug.h" />
-    <ClInclude Include="Engine\Services\Graphics\SDLWindow.h" />
-    <ClInclude Include="Engine\Services\Graphics.h" />
-    <ClInclude Include="Engine\Services\Input.h" />
-    <ClInclude Include="Engine\Services\Input\SDLInput.h" />
+    <ClInclude Include="include\Engine.h" />
+    <ClInclude Include="include\Debug.h" />
+    <ClInclude Include="include\Error.h" />
+    <ClInclude Include="include\Graphics\Texture.h" />
+    <ClInclude Include="include\Graphics\WindowSDL.h" />
+    <ClInclude Include="include\Graphics\Window.h" />
+    <ClInclude Include="include\Input\Input.h" />
+    <ClInclude Include="include\Input\InputSDL.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\Back.bmp" />
+    <Image Include="Assets\Card-Back.bmp" />
+    <Image Include="assets\Clubs\Clubs-Ace.bmp" />
+    <Image Include="assets\Clubs\Clubs-Eight.bmp" />
+    <Image Include="assets\Clubs\Clubs-Five.bmp" />
+    <Image Include="assets\Clubs\Clubs-Four.bmp" />
+    <Image Include="assets\Clubs\Clubs-Jack.bmp" />
+    <Image Include="assets\Clubs\Clubs-King.bmp" />
+    <Image Include="assets\Clubs\Clubs-Nine.bmp" />
+    <Image Include="assets\Clubs\Clubs-Queen.bmp" />
+    <Image Include="assets\Clubs\Clubs-Seven.bmp" />
+    <Image Include="assets\Clubs\Clubs-Six.bmp" />
+    <Image Include="assets\Clubs\Clubs-Ten.bmp" />
+    <Image Include="assets\Clubs\Clubs-Three.bmp" />
+    <Image Include="assets\Clubs\Clubs-Two.bmp" />
+    <Image Include="assets\Diamonds\Diamonds-Ace.bmp" />
+    <Image Include="assets\Diamonds\Diamonds-Eight.bmp" />
+    <Image Include="assets\Diamonds\Diamonds-Five.bmp" />
+    <Image Include="assets\Diamonds\Diamonds-Four.bmp" />
+    <Image Include="assets\Diamonds\Diamonds-Jack.bmp" />
+    <Image Include="assets\Diamonds\Diamonds-King.bmp" />
+    <Image Include="assets\Diamonds\Diamonds-Nine.bmp" />
+    <Image Include="assets\Diamonds\Diamonds-Queen.bmp" />
+    <Image Include="assets\Diamonds\Diamonds-Seven.bmp" />
+    <Image Include="assets\Diamonds\Diamonds-Six.bmp" />
+    <Image Include="assets\Diamonds\Diamonds-Ten.bmp" />
+    <Image Include="assets\Diamonds\Diamonds-Three.bmp" />
+    <Image Include="assets\Diamonds\Diamonds-Two.bmp" />
+    <Image Include="assets\Hearts\Hearts-Ace.bmp" />
+    <Image Include="assets\Hearts\Hearts-Eight.bmp" />
+    <Image Include="assets\Hearts\Hearts-Five.bmp" />
+    <Image Include="assets\Hearts\Hearts-Four.bmp" />
+    <Image Include="assets\Hearts\Hearts-Jack.bmp" />
+    <Image Include="assets\Hearts\Hearts-King.bmp" />
+    <Image Include="assets\Hearts\Hearts-Nine.bmp" />
+    <Image Include="assets\Hearts\Hearts-Queen.bmp" />
+    <Image Include="assets\Hearts\Hearts-Seven.bmp" />
+    <Image Include="assets\Hearts\Hearts-Six.bmp" />
+    <Image Include="assets\Hearts\Hearts-Ten.bmp" />
+    <Image Include="assets\Hearts\Hearts-Three.bmp" />
+    <Image Include="assets\Hearts\Hearts-Two.bmp" />
+    <Image Include="assets\Spades\Hearts-Ace.bmp" />
+    <Image Include="assets\Spades\Hearts-Eight.bmp" />
+    <Image Include="assets\Spades\Hearts-Five.bmp" />
+    <Image Include="assets\Spades\Hearts-Four.bmp" />
+    <Image Include="assets\Spades\Hearts-Jack.bmp" />
+    <Image Include="assets\Spades\Hearts-King.bmp" />
+    <Image Include="assets\Spades\Hearts-Nine.bmp" />
+    <Image Include="assets\Spades\Hearts-Queen.bmp" />
+    <Image Include="assets\Spades\Hearts-Seven.bmp" />
+    <Image Include="assets\Spades\Hearts-Six.bmp" />
+    <Image Include="assets\Spades\Hearts-Ten.bmp" />
+    <Image Include="assets\Spades\Hearts-Three.bmp" />
+    <Image Include="assets\Spades\Hearts-Two.bmp" />
+    <Image Include="src\Graphics\Back.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
