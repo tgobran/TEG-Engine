@@ -27,6 +27,6 @@ private:
 
 	bool active;
 
-	Window* graphics;
+	Graphics* graphics;
 	Input* input;
 };

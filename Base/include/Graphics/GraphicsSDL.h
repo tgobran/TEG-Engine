@@ -1,5 +1,5 @@
 #pragma once
-#include "Graphics/Window.h"
+#include "Graphics/Graphics.h"
 
 #include <map>
 
@@ -7,7 +7,7 @@
 
 #include "Error.h"
 
-class WindowSDL : public Window {
+class GraphicsSDL : public Graphics {
 
 public:
 	void initialize(const char* name, int xpos, int ypos, int width, int height, bool fullscreen);

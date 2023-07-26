@@ -4,11 +4,11 @@
 
 #include "SDL.h"
 
-#include "Graphics/WindowSDL.h"
+#include "Graphics/GraphicsSDL.h"
 #include "Input/InputSDL.h"
 
 void Engine::activate() {
-	graphics = new WindowSDL();
+	graphics = new GraphicsSDL();
 	graphics->initialize("TApp", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, false);
 	input = new InputSDL();
 	input->initialize();

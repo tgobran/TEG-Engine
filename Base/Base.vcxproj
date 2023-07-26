@@ -140,8 +140,8 @@
     <ClInclude Include="include\Debug.h" />
     <ClInclude Include="include\Error.h" />
     <ClInclude Include="include\Graphics\Texture.h" />
-    <ClInclude Include="include\Graphics\WindowSDL.h" />
-    <ClInclude Include="include\Graphics\Window.h" />
+    <ClInclude Include="include\Graphics\GraphicsSDL.h" />
+    <ClInclude Include="include\Graphics\Graphics.h" />
     <ClInclude Include="include\Input\Input.h" />
     <ClInclude Include="include\Input\InputSDL.h" />
   </ItemGroup>

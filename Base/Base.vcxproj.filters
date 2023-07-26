@@ -32,10 +32,10 @@
     <ClInclude Include="include\Engine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Graphics\Window.h">
+    <ClInclude Include="include\Graphics\Graphics.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Graphics\WindowSDL.h">
+    <ClInclude Include="include\Graphics\GraphicsSDL.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\Input\Input.h">

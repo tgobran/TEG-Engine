@@ -2,12 +2,12 @@
 
 #include "Debug.h"
 
-#define WINDOW_DEBUG(X) DEBUG("WINDOW",X)
+#define GRAPHICS_DEBUG(X) DEBUG("GRAPHICS",X)
 
-class Window {
+class Graphics {
 
 public:
-	virtual ~Window() {};
+	virtual ~Graphics() {};
 
 	virtual void initialize(const char* name, int xpos, int ypos, int width, int height, bool fullscreen) = 0;
 
