@@ -200,7 +200,6 @@
     <Image Include="assets\Spades\Hearts-Ten.bmp" />
     <Image Include="assets\Spades\Hearts-Three.bmp" />
     <Image Include="assets\Spades\Hearts-Two.bmp" />
-    <Image Include="src\Graphics\Back.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

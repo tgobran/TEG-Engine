@@ -217,8 +217,5 @@
     <Image Include="assets\Spades\Hearts-Two.bmp">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="src\Graphics\Back.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
   </ItemGroup>
 </Project>
