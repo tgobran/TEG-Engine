@@ -21,7 +21,7 @@
     <ClCompile Include="src\Engine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Graphics\WindowSDL.cpp">
+    <ClCompile Include="src\Graphics\GraphicsSDL.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Input\InputSDL.cpp">

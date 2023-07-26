@@ -131,7 +131,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Engine.cpp" />
-    <ClCompile Include="src\Graphics\WindowSDL.cpp" />
+    <ClCompile Include="src\Graphics\GraphicsSDL.cpp" />
     <ClCompile Include="src\Input\InputSDL.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>

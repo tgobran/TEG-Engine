@@ -13,6 +13,8 @@ void GraphicsSDL::initialize(const char* name, int xpos, int ypos, int width, in
 		GRAPHICS_DEBUG("SDL Video Initialized")
 
 		window = SDL_CreateWindow(name, xpos, ypos, width, height, flags);
+		WINDOW_WIDTH = width;
+		WINDOW_HEIGHT = height;
 		if (window) {
 			GRAPHICS_DEBUG("Window Initialized")
 		}
@@ -35,7 +37,7 @@ void GraphicsSDL::initialize(const char* name, int xpos, int ypos, int width, in
 void GraphicsSDL::update() {
 	GRAPHICS_DEBUG("Update Started")
 	SDL_RenderClear(renderer);
-	renderTexture(loadTexture("assets/Back.bmp"));
+	renderTexture(loadTexture("assets/Back.bmp"),0.5,0.5,0.2,0.2);
 	SDL_RenderPresent(renderer);
 	GRAPHICS_DEBUG("Update Complete")
 }
@@ -70,16 +72,45 @@ int GraphicsSDL::loadTexture(std::string path) {
 	return nextID++;
 }
 
-void GraphicsSDL::renderTexture(unsigned int id) {
-	GRAPHICS_DEBUG("Rendering Texture - " << id)
+void GraphicsSDL::renderTexture(unsigned int id, float x, float y, float w, float h) {
+	SDL_Rect dstrect;
+	if (x != floor(x) && x < 1)
+		dstrect.x = WINDOW_WIDTH * x;
+	else
+		dstrect.x = x;
+	if (y != floor(y) && y < 1)
+		dstrect.y = WINDOW_HEIGHT * y;
+	else
+		dstrect.y = y;
+	if (w != floor(w) && w < 1)
+		dstrect.w = WINDOW_WIDTH * w;
+	else
+		dstrect.w = w;
+	if (h != floor(h) && h < 1)
+		dstrect.h = WINDOW_HEIGHT * h;
+	else
+		dstrect.h = h;
+	renderSDLTexture(getSDLTexture(id), nullptr, &dstrect);
+}
+
+void GraphicsSDL::renderTextureFill(unsigned int id) {
+	GRAPHICS_DEBUG("Rendering Fill Texture - " << id)
+		renderSDLTexture(getSDLTexture(id), nullptr, nullptr);
+}
+
+SDL_Texture* GraphicsSDL::getSDLTexture(unsigned int id) {
 	auto texture = textureMap.find(id);
 	if (texture == textureMap.end()) {
 		GRAPHICS_DEBUG("Texture Missing - " + id)
-		// TODO Failed to find texture in TextureMaps
-		return;
+			// TODO Failed to find texture in TextureMaps
+		return nullptr;
 	}
-	if (SDL_RenderCopy(renderer, texture->second, NULL, NULL)) {
-		GRAPHICS_DEBUG("Failed Texture Render")
-		// TODO Failed creation error handling
-	}
+	return texture->second;
 }
+
+void GraphicsSDL::renderSDLTexture(SDL_Texture* texture, SDL_Rect* src, SDL_Rect* dst) {
+	if (SDL_RenderCopy(renderer, texture, src, dst)) {
+		GRAPHICS_DEBUG("Failed SDL Texture Render")
+			// TODO Failed creation error handling
+	}
+} 

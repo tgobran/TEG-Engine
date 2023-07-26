@@ -17,10 +17,18 @@ public:
 	void cleanup();
 
 	int loadTexture(std::string path);
-	void renderTexture(unsigned int id);
 
+	void renderTexture(unsigned int id, float x, float y, float w, float h);
+	void renderTextureFill(unsigned int id);
+	
 private:
+	SDL_Texture* getSDLTexture(unsigned int id);
+	void renderSDLTexture(SDL_Texture* texture, SDL_Rect* source, SDL_Rect* destination);
+
 	SDL_Window* window;
+	int WINDOW_WIDTH;
+	int WINDOW_HEIGHT;
+
 	SDL_Renderer* renderer;
 
 	unsigned int nextID;
