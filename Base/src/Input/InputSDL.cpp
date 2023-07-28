@@ -22,6 +22,16 @@ InputCommand InputSDL::check() {
 			INPUT_DEBUG("Check - BACK")
 			return InputCommand::Quit;
 		}
+	case SDL_MOUSEBUTTONDOWN:
+		mouseDown = true;
+		SDL_GetMouseState(&mouseX, &mouseY);
+		INPUT_DEBUG("MOUSE DOWN | X = " << mouseX << " | Y = " << mouseY)
+		break;
+	case SDL_MOUSEBUTTONUP:
+		mouseDown = false;
+		SDL_GetMouseState(&mouseX, &mouseY);
+		INPUT_DEBUG("MOUSE UP | X = " << mouseX << " | Y = " << mouseY)
+		break;
 	}
 	return InputCommand::NONE;
 }

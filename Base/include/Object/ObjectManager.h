@@ -9,9 +9,9 @@ class ObjectManager {
 public:
 	void update();
 
-	void addEntity(Object* entity);
+	void addObject(Object* object);
 
-	void deleteEntity(int ID);
+	void destroyObject(int ID);
 
 	void cleanup();
 

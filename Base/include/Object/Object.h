@@ -7,7 +7,11 @@
 class Object {
 
 public:
-	Object(unsigned int id) : ID(id) {};
+	Object(int x, int y, int w, int h, std::initializer_list<Component*> c) : xpos(x), ypos(y), width(w), height(h) {
+		for (auto component : c) {
+			addComponent(component);
+		}
+	};
 	
 	~Object() {};
 
@@ -17,8 +21,15 @@ public:
 
 	void cleanup();
 
+	void setX(int newX) { xpos = newX; }
+	void setY(int newY) { ypos = newY; }
+
 private:
 	unsigned int ID;
-
 	std::vector<Component*> components;
+
+	int xpos;
+	int ypos;
+	int width;
+	int height;
 };

@@ -109,7 +109,7 @@ void GraphicsSDL::renderTextureFill(unsigned int id) {
 SDL_Texture* GraphicsSDL::getSDLTexture(unsigned int id) {
 	auto texture = textureMap.find(id);
 	if (texture == textureMap.end()) {
-		GRAPHICS_DEBUG("Texture Missing - " + id)
+		GRAPHICS_DEBUG("Texture Missing - " << id)
 			// TODO Failed to find texture in TextureMaps
 		return nullptr;
 	}

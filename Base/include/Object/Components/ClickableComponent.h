@@ -7,7 +7,13 @@
 class ClickableComponent : public Component {
 
 public:
-	void update(Object* entity) {
+	ClickableComponent() {}
 
+	void update(Object* entity) {
+		if (Locator::getInput()->isMouseDown()) {
+			if (Locator::getInput()->getMousePos().first) {
+			}
+			DEBUG("CLICKABLE","CLICK FOUND")
+		}
 	}
 };

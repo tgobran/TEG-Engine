@@ -5,12 +5,12 @@ void ObjectManager::update() {
 		e.second->update();
 }
 
-void ObjectManager::addEntity(Object* entity) {
-	objectMap[nextID] = entity;
+void ObjectManager::addObject(Object *object) {
+	objectMap[nextID] = object;
 	nextID++;
 }
 
-void ObjectManager::deleteEntity(int ID) {
+void ObjectManager::destroyObject(int ID) {
 	objectMap[ID]->cleanup();
 	objectMap.erase(ID);
 }

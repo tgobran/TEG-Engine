@@ -1,12 +1,13 @@
 #include "Engine.h"
 
-#include <iostream>
-
 #include "SDL.h"
 
 #include "Locator.h"
 #include "Graphics/GraphicsSDL.h"
 #include "Input/InputSDL.h"
+
+// TODO Remove for final version
+#include "Object/Components/ClickableComponent.h"
 
 void Engine::activate() {
 	graphics = new GraphicsSDL();
@@ -14,8 +15,12 @@ void Engine::activate() {
 	input = new InputSDL();
 	input->initialize();
 	objects = new ObjectManager();
-	//Locator::initialize(graphics, input); // , entities);
+	int i = 10;
+	Locator::initialize(graphics, input);
 	active = true;
+
+	// TODO REMOVE AFTER TESTING
+	objects->addObject(new Object(100, 100, 100, 100, { new ClickableComponent()}));
 }
 
 void Engine::execute() {
