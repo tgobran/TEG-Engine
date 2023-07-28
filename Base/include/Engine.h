@@ -24,8 +24,6 @@ public:
 	void deactivate();
 
 private:
-	void handleInput(InputCommand input);
-
 	bool active = false;
 
 	Graphics* graphics = nullptr;

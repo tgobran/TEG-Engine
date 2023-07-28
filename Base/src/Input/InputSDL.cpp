@@ -8,30 +8,74 @@ void InputSDL::initialize() {
 	INPUT_DEBUG("Initialize Completed")
 }
 
-InputCommand InputSDL::check() {
+bool InputSDL::check() {
 	SDL_Event event;
 	SDL_PollEvent(&event);
 	switch (event.type) {
 	case SDL_QUIT:
 		INPUT_DEBUG("Check - Quit")
-		return InputCommand::Quit;
-	case SDL_KEYDOWN:
-		INPUT_DEBUG("KEYDOWN")
-		switch (event.key.keysym.sym) {
-		case SDLK_ESCAPE:
-			INPUT_DEBUG("Check - BACK")
-			return InputCommand::Quit;
-		}
+			return false;
 	case SDL_MOUSEBUTTONDOWN:
-		mouseDown = true;
-		SDL_GetMouseState(&mouseX, &mouseY);
-		INPUT_DEBUG("MOUSE DOWN | X = " << mouseX << " | Y = " << mouseY)
+		mouseDownHandler(&event.button);
 		break;
 	case SDL_MOUSEBUTTONUP:
-		mouseDown = false;
-		SDL_GetMouseState(&mouseX, &mouseY);
-		INPUT_DEBUG("MOUSE UP | X = " << mouseX << " | Y = " << mouseY)
+		mouseUpHandler(&event.button);
+		break;
+	case SDL_KEYDOWN:
+		keyDownHandler(&event.key);
+		break;
+	case SDL_KEYUP:
+		keyUpHandler(&event.key);
 		break;
 	}
-	return InputCommand::NONE;
+	return true;
+}
+
+void InputSDL::mouseDownHandler(SDL_MouseButtonEvent* event) {
+	if (mouseDown)
+		mouseHold = true;
+	else
+		mouseDown = true;
+	switch (event->button) {
+	case SDL_BUTTON_LEFT:
+		INPUT_DEBUG("MOUSE DOWN | LEFT   | X = " << event->x << " Y = " << event->y)
+		break;
+	case SDL_BUTTON_MIDDLE:
+		INPUT_DEBUG("MOUSE DOWN | MIDDLE | X = " << event->x << " Y = " << event->y)
+		break;
+	case SDL_BUTTON_RIGHT:
+		INPUT_DEBUG("MOUSE DOWN | RIGHT  | X = " << event->x << " Y = " << event->y)
+		break;
+	}
+}
+
+void InputSDL::mouseUpHandler(SDL_MouseButtonEvent* event) {
+	mouseDown = false;
+	mouseHold = false;
+	switch (event->button) {
+	case SDL_BUTTON_LEFT:
+		INPUT_DEBUG("MOUSE UP   | LEFT   | X = " << event->x << " Y = " << event->y)
+			break;
+	case SDL_BUTTON_MIDDLE:
+		INPUT_DEBUG("MOUSE UP   | MIDDLE | X = " << event->x << " Y = " << event->y)
+			break;
+	case SDL_BUTTON_RIGHT:
+		INPUT_DEBUG("MOUSE UP   | RIGHT  | X = " << event->x << " Y = " << event->y)
+			break;
+	}
+}
+
+void InputSDL::keyDownHandler(SDL_KeyboardEvent* event) {
+	if (keyDown)
+		keyHold = true;
+	else
+		keyDown = true;
+	INPUT_DEBUG("KEY DOWN | " << (char)event->keysym.sym)
+	key = event->keysym.sym;
+}
+
+void InputSDL::keyUpHandler(SDL_KeyboardEvent* event) {
+	keyHold = false;
+	keyDown = false;
+	INPUT_DEBUG("KEY UP   | " << (char)event->keysym.sym)
 }

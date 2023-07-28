@@ -6,12 +6,6 @@
 
 #define INPUT_DEBUG(X) DEBUG("INPUT",X)
 
-enum class InputCommand {
-	NONE,
-	Back,
-	Quit,
-};
-
 class Input {
 
 public:
@@ -19,13 +13,26 @@ public:
 
 	virtual void initialize() = 0;
 
-	virtual InputCommand check() = 0;
+	virtual bool check() = 0;
 
 	bool isMouseDown() { return mouseDown; }
-	std::pair<int, int> getMousePos() { return std::make_pair(mouseX, mouseY);  }
+	bool isMouseHold() { return mouseHold; }
+	std::pair<int, int> getMousePos() { return std::make_pair(mouseDownX, mouseDownY);  }
+	std::pair<int, int> getMouseDest() { return std::make_pair(mouseUpX, mouseUpY); }
+
+	bool isKeyDown() { return keyDown; }
+	bool isKeyHold() { return keyHold; }
+	char getKeyDown() { return key; }
 
 protected:
 	bool mouseDown;
-	int mouseX;
-	int mouseY;
+	bool mouseHold;
+	int mouseDownX;
+	int mouseDownY;
+	int mouseUpX;
+	int mouseUpY;
+
+	bool keyDown;
+	bool keyHold;
+	char key;
 };

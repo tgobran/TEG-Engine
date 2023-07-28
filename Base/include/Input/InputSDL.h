@@ -8,5 +8,12 @@ class InputSDL : public Input {
 public:
 	void initialize();
 	
-	InputCommand check();
+	bool check();
+
+private:
+	void mouseDownHandler(SDL_MouseButtonEvent* event);
+	void mouseUpHandler(SDL_MouseButtonEvent* event);
+
+	void keyDownHandler(SDL_KeyboardEvent* event);
+	void keyUpHandler(SDL_KeyboardEvent* event);
 };

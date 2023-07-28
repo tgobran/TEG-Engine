@@ -29,7 +29,7 @@ void Engine::execute() {
 	while (active) {
 		frameStart = SDL_GetTicks();
 
-		handleInput(input->check());
+		active = input->check();
 		objects->update();
 		graphics->update();
 
@@ -45,14 +45,4 @@ void  Engine::deactivate() {
 	objects->cleanup();
 	graphics->cleanup();
 	SDL_Quit();
-}
-
-void Engine::handleInput(InputCommand input) {
-	switch (input) {
-	case InputCommand::Quit:
-		active = false;
-		break;
-	default:
-		break;
-	}
 }
