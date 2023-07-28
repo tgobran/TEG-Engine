@@ -22,7 +22,12 @@ public:
 	void cleanup();
 
 	void setX(int newX) { xpos = newX; }
+	int getX() { return xpos; }
 	void setY(int newY) { ypos = newY; }
+	int getY() { return ypos; }
+
+	int getWidth() { return width; }
+	int getHeight() { return height; }
 
 private:
 	unsigned int ID;

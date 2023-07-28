@@ -2,7 +2,7 @@
 
 #include "Debug.h"
 
-#define GRAPHICS_DEBUG(X) DEBUG("GRAPHICS",X)
+#define GRAPHICS_DEBUG(X) // DEBUG("GRAPHICS",X)
 
 class Graphics {
 

@@ -37,7 +37,8 @@ void GraphicsSDL::initialize(const char* name, int xpos, int ypos, int width, in
 void GraphicsSDL::update() {
 	GRAPHICS_DEBUG("Update Started")
 	SDL_RenderClear(renderer);
-	renderTexture(loadTexture("assets/Back.bmp"),0.5,0.5,0.2,0.2,true);
+	// TODO Replace with Proper Rendering
+	renderTexture(loadTexture("assets/Back.bmp"), 100, 100, 100, 100);
 	SDL_RenderPresent(renderer);
 	GRAPHICS_DEBUG("Update Complete")
 }

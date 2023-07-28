@@ -1,6 +1,5 @@
 #include "Object/Object.h"
 
-
 void Object::addComponent(Component* c) {
 	components.push_back(c);
 }

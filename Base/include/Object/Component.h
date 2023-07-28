@@ -7,5 +7,5 @@
 class Component {
 
 public:
-	void update(Object* object) {};
+	virtual void update(Object* object) = 0;
 };
