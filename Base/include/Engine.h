@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Object/ObjectManager.h"
 #include "Graphics/Graphics.h"
 #include "Input/Input.h"
 
@@ -29,4 +30,5 @@ private:
 
 	Graphics* graphics = nullptr;
 	Input* input = nullptr;
+	ObjectManager* objects = nullptr;
 };

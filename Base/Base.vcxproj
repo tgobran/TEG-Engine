@@ -134,16 +134,25 @@
     <ClCompile Include="src\Graphics\GraphicsSDL.cpp" />
     <ClCompile Include="src\Input\InputSDL.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\Objects\Object.cpp" />
+    <ClCompile Include="src\Objects\ObjectManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Engine.h" />
     <ClInclude Include="include\Debug.h" />
+    <ClInclude Include="include\Object\Component.h" />
+    <ClInclude Include="include\Locator.h" />
+    <ClInclude Include="include\Object\Components\ClickableComponent.h" />
+    <ClInclude Include="include\Object\Components\GraphicsComponent.h" />
+    <ClInclude Include="include\Object\Object.fwd.h" />
+    <ClInclude Include="include\Object\Object.h" />
     <ClInclude Include="include\Error.h" />
     <ClInclude Include="include\Graphics\Texture.h" />
     <ClInclude Include="include\Graphics\GraphicsSDL.h" />
     <ClInclude Include="include\Graphics\Graphics.h" />
     <ClInclude Include="include\Input\Input.h" />
     <ClInclude Include="include\Input\InputSDL.h" />
+    <ClInclude Include="include\Object\ObjectManager.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\Back.bmp" />
