@@ -7,7 +7,5 @@
 class GraphicsComponent : public Component {
 
 public:
-	void update(Object* entity) {
-
-	}
+	void update() {}
 };

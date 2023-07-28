@@ -47,6 +47,8 @@ void GraphicsSDL::cleanup() {
 	GRAPHICS_DEBUG("Cleanup Started")
 	for (auto const& texture : textureMap)
 		SDL_DestroyTexture(texture.second);
+	textureIDs.clear();
+	textureMap.clear();
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
 	IMG_Quit();

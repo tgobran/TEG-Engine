@@ -7,5 +7,9 @@
 class Component {
 
 public:
-	virtual void update(Object* object) = 0;
+	void setObject(Object* o) { object = o; }
+	virtual void update() = 0;
+
+protected:
+	Object* object;
 };

@@ -8,6 +8,10 @@
 
 // TODO Remove for final version
 #include "Object/Components/ClickableComponent.h"
+void toyOnClick() {
+	std::cerr << "CLICKED OBJECT" << std::endl;
+}
+
 
 void Engine::activate() {
 	graphics = new GraphicsSDL();
@@ -20,7 +24,7 @@ void Engine::activate() {
 	active = true;
 
 	// TODO REMOVE AFTER TESTING
-	objects->addObject(new Object(100, 100, 100, 100, { new ClickableComponent()}));
+	objects->addObject(new Object(100, 100, 100, 100, { new ClickableComponent(&toyOnClick)}));
 }
 
 void Engine::execute() {
@@ -45,4 +49,8 @@ void  Engine::deactivate() {
 	objects->cleanup();
 	graphics->cleanup();
 	SDL_Quit();
+
+	delete objects;
+	delete input;
+	delete graphics;
 }

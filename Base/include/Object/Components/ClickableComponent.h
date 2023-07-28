@@ -2,24 +2,21 @@
 
 #include <iostream>
 
+#include "Listener/MouseListener.h"
 #include "Object/Component.h"
 
-#include "Locator.h"
-
-class ClickableComponent : public Component {
+class ClickableComponent : public Component, MouseListener {
 
 public:
-	ClickableComponent() {}
+	ClickableComponent(void (*func)());
 
-	void update(Object* obj) {
-		if (Locator::getInput()->isMouseDown()) {
-			int mouseX = Locator::getInput()->getMousePos().first;
-			int mouseY = Locator::getInput()->getMousePos().second;
-			if (!(mouseX >= obj->getX() && mouseX <= obj->getWidth()+obj->getX()))
-				return;
-			if (!(mouseY >= obj->getY() && mouseY <= obj->getHeight() + obj->getY()))
-				return;
-			DEBUG("CLICKABLE","CLICK FOUND")
-		}
-	}
+	void update();
+	void onMouseDown(int x, int y);
+	void onMouseUp(int x, int y);
+	void onMouseMove(int x, int y);
+
+private:
+	bool clicked = false;
+	bool cDown = false;
+	void (*onClick)();
 };

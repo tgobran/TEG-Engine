@@ -14,6 +14,8 @@ private:
 	void mouseDownHandler(SDL_MouseButtonEvent* event);
 	void mouseUpHandler(SDL_MouseButtonEvent* event);
 
+	void mouseMotionHandler(SDL_MouseMotionEvent* event);
+
 	void keyDownHandler(SDL_KeyboardEvent* event);
 	void keyUpHandler(SDL_KeyboardEvent* event);
 };

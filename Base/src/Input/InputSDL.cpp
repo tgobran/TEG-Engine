@@ -21,6 +21,9 @@ bool InputSDL::check() {
 	case SDL_MOUSEBUTTONUP:
 		mouseUpHandler(&event.button);
 		break;
+	case SDL_MOUSEMOTION:
+		mouseMotionHandler(&event.motion);
+		break;
 	case SDL_KEYDOWN:
 		keyDownHandler(&event.key);
 		break;
@@ -32,10 +35,7 @@ bool InputSDL::check() {
 }
 
 void InputSDL::mouseDownHandler(SDL_MouseButtonEvent* event) {
-	if (mouseDown)
-		mouseHold = true;
-	else
-		mouseDown = true;
+	mouseDown = true;
 	switch (event->button) {
 	case SDL_BUTTON_LEFT:
 		INPUT_DEBUG("MOUSE DOWN | LEFT   | X = " << event->x << " Y = " << event->y)
@@ -47,11 +47,12 @@ void InputSDL::mouseDownHandler(SDL_MouseButtonEvent* event) {
 		INPUT_DEBUG("MOUSE DOWN | RIGHT  | X = " << event->x << " Y = " << event->y)
 		break;
 	}
+	for (MouseListener* l : mouseListeners)
+		l->onMouseDown(event->x, event->y);
 }
 
 void InputSDL::mouseUpHandler(SDL_MouseButtonEvent* event) {
 	mouseDown = false;
-	mouseHold = false;
 	switch (event->button) {
 	case SDL_BUTTON_LEFT:
 		INPUT_DEBUG("MOUSE UP   | LEFT   | X = " << event->x << " Y = " << event->y)
@@ -63,6 +64,15 @@ void InputSDL::mouseUpHandler(SDL_MouseButtonEvent* event) {
 		INPUT_DEBUG("MOUSE UP   | RIGHT  | X = " << event->x << " Y = " << event->y)
 			break;
 	}
+	for (MouseListener* l : mouseListeners)
+		l->onMouseUp(event->x, event->y);
+}
+
+void InputSDL::mouseMotionHandler(SDL_MouseMotionEvent* event) {
+	mouseX = event->x;
+	mouseY = event->y;
+	for (MouseListener* l : mouseListeners)
+		l->onMouseMove(event->x, event->y);
 }
 
 void InputSDL::keyDownHandler(SDL_KeyboardEvent* event) {

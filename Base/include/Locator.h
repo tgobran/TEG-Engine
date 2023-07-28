@@ -23,6 +23,3 @@ private:
 	static Graphics* graphics;
 	static Input* input;
 };
-
-Graphics* Locator::graphics = nullptr;
-Input* Locator::input = nullptr;

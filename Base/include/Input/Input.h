@@ -1,8 +1,10 @@
 #pragma once
 
-#include <utility>
+#include <vector>
 
 #include "Debug.h"
+
+#include "Listener/MouseListener.h"
 
 #define INPUT_DEBUG(X) DEBUG("INPUT",X)
 
@@ -15,10 +17,7 @@ public:
 
 	virtual bool check() = 0;
 
-	bool isMouseDown() { return mouseDown; }
-	bool isMouseHold() { return mouseHold; }
-	std::pair<int, int> getMousePos() { return std::make_pair(mouseDownX, mouseDownY);  }
-	std::pair<int, int> getMouseDest() { return std::make_pair(mouseUpX, mouseUpY); }
+	void addMouseListener(MouseListener* listener) { mouseListeners.push_back(listener); }
 
 	bool isKeyDown() { return keyDown; }
 	bool isKeyHold() { return keyHold; }
@@ -26,13 +25,12 @@ public:
 
 protected:
 	bool mouseDown;
-	bool mouseHold;
-	int mouseDownX;
-	int mouseDownY;
-	int mouseUpX;
-	int mouseUpY;
+	int mouseX;
+	int mouseY;
 
 	bool keyDown;
 	bool keyHold;
 	char key;
+
+	std::vector<MouseListener*> mouseListeners;
 };

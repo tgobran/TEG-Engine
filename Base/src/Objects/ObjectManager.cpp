@@ -12,11 +12,14 @@ void ObjectManager::addObject(Object *object) {
 
 void ObjectManager::destroyObject(int ID) {
 	objectMap[ID]->cleanup();
+	delete objectMap[ID];
 	objectMap.erase(ID);
 }
 
 void ObjectManager::cleanup() {
-	for (auto const& e : objectMap)
-		e.second->cleanup();
+	for (auto const& o : objectMap) {
+		o.second->cleanup();
+		delete o.second;
+	}
 	objectMap.clear();
 }

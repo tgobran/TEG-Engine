@@ -12,5 +12,7 @@ int main(int argc, char* argv[]) {
 	engine->execute();
 	engine->deactivate();
 
+	delete engine;
+
 	return 0;
 }

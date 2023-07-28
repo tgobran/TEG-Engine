@@ -134,12 +134,16 @@
     <ClCompile Include="src\Graphics\GraphicsSDL.cpp" />
     <ClCompile Include="src\Input\InputSDL.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\Locator.cpp" />
+    <ClCompile Include="src\Objects\Components\ClickableComponent.cpp" />
     <ClCompile Include="src\Objects\Object.cpp" />
     <ClCompile Include="src\Objects\ObjectManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Engine.h" />
     <ClInclude Include="include\Debug.h" />
+    <ClInclude Include="include\Listener\MouseListener.h" />
+    <ClInclude Include="include\Object\Component.fwd.h" />
     <ClInclude Include="include\Object\Component.h" />
     <ClInclude Include="include\Locator.h" />
     <ClInclude Include="include\Object\Components\ClickableComponent.h" />
