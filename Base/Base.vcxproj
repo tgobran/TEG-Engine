@@ -104,12 +104,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Tyler Gobran\Documents\Development\SDL2 Image\include;C:\Users\Tyler Gobran\Documents\Development\TApp\Base\include;C:\Users\Tyler Gobran\Documents\Development\SDL2\include;D:\Development\SDL2\include;D:\Development\SDL2 Image\include;D:\Development\TApp\Base\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)SDL2\include;$(ProjectDir)SDL2_Image\include;$(ProjectDir)SDL2_TTF\include;$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>D:\Development\SDL2\lib\x64;D:\Development\SDL2 Image\lib\x64;C:\Users\Tyler Gobran\Documents\Development\SDL2\lib\x64;C:\Users\Tyler Gobran\Documents\Development\SDL2 Image\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)SDL2\lib\x64;$(ProjectDir)SDL2_Image\lib\x64;$(ProjectDir)SDL2_TTF\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -213,6 +213,9 @@
     <Image Include="assets\Spades\Hearts-Ten.bmp" />
     <Image Include="assets\Spades\Hearts-Three.bmp" />
     <Image Include="assets\Spades\Hearts-Two.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitignore" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
